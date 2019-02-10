@@ -1,0 +1,71 @@
+# Display.
+title: "A Merely Useful Template"
+subtitle: "Build a GitHub Pages Site and a Nicely-Formatted Book from the Same Source"
+editor: "Greg Wilson"
+copyrightyear: "2019"
+repo: "https://github.com/merely-useful/template"
+website: "https://merely-useful.github.io/template/"
+email: "gvwilson@third-bit.com"
+organization: https://github.com/merely-useful/
+
+# Order for table of contents.
+toc:
+  lessons:
+  - intro
+  bib:
+  - bib
+  extras:
+  - license
+  - conduct
+  - citation
+  - contributing
+  - gloss
+  - objectives
+  - keypoints
+
+#-------------------------------------------------------------------------------
+
+# Tell Jekyll that "en" is a collection (whose files are found in "_en").  This
+# is what allows us to loop over files in various inclusions.  We use "en" to
+# indicate English, and can use other two-letter codes for other languages.
+collections:
+  en:
+    output: true
+    permalink: /:collection/:title/
+
+# Specify the use of the "lesson" template for elements of the "en" collection.
+defaults:
+  - scope:
+      path: ""
+      type: en
+    values:
+      language: "en"
+      layout: "lesson"
+
+# Translations keyed by language.  This lookup table allows us to put the right
+# titles on inclusion blocks in various languages.
+translations:
+  en:
+    generated: "Last generated"
+    questions: "Questions"
+    keypoints: "Key Points"
+
+# Standard Jekyll settings.
+repository: <USERNAME>/<PROJECT>
+highlighter: rouge
+plugins:
+- "jekyll-redirect-from"
+exclude:
+- BUILD.md
+- CITATION.md
+- CONDUCT.md
+- LICENSE.md
+- Makefile
+- README.md
+- bin
+- etc
+- misc
+- node_modules
+- requirements.txt
+- src
+- tex

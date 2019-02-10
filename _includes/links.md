@@ -11,3 +11,9 @@ definitions if that's done.
 [config-organization]: {{site.organization}}
 [config-repo]: {{site.repo}}
 [config-website]: {{site.website}}
+
+[covenant]: https://www.contributor-covenant.org
+
+[jekyll]: https://jekyllrb.com/
+
+[wilson-greg]: http://third-bit.com
