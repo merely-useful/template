@@ -55,6 +55,45 @@
     because Jekyll doesn't support lookup by field in collections.
     -   This makes Jekyll's running time O(N^2), but there's nothing we can do about it.
 
+## Configuration Entries
+
+The top half of `./_config.yml` should look like this:
+
+```
+# Display.
+title: "A Merely Useful Template"
+subtitle: "Build a GitHub Pages Site and a Nicely-Formatted Book from the Same Source"
+editor: "Greg Wilson"
+copyrightyear: "2019"
+repo: "https://github.com/merely-useful/template"
+website: "https://merely-useful.github.io/template/"
+email: "gvwilson@third-bit.com"
+organization: https://github.com/merely-useful/
+disclaimer: true
+
+# Order for table of contents.
+toc:
+  lessons:
+  - intro
+  bib:
+  - bib
+  extras:
+  - license
+  - conduct
+  - citation
+  - contributing
+  - gloss
+  - objectives
+  - keypoints
+```
+
+The keys under `Display` should be self-explanatory.
+The keys under `toc` *must* be `lessons`, `bib`, and `extras` in that order;
+the only entry allowed under `bib` is `bib`,
+and all of the entries shown under `extras` should be there
+(though others may be added).
+The main index file (e.g., `_en/index.md`) is *not* included in the table of contents.
+
 ## Typography
 
 -   Refer to glossary entries using `{% raw %}[text](#g:key){% endraw %}`.
