@@ -7,6 +7,7 @@ repo: "https://github.com/merely-useful/template"
 website: "https://merely-useful.github.io/template/"
 email: "gvwilson@third-bit.com"
 organization: https://github.com/merely-useful/
+disclaimer: true
 
 # Order for table of contents.
 toc:

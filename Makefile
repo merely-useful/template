@@ -139,11 +139,6 @@ spelling :
 undone :
 	@grep -l 'undone: true' _en/*.md
 
-## words          : count words in finished files.
-words :
-	@for filename in $$(fgrep -L 'undone: true' ${PAGES_MD}); do printf '%6d %s\n' $$(cat $$filename | bin/uncode.py | wc -w) $$filename; done | sort -n -r
-	@printf '%6d %s\n' $$(cat ${PAGES_MD} | bin/uncode.py | wc -w) 'total'
-
 ## ----------------------------------------
 
 ## clean          : clean up junk files.
