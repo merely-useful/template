@@ -1,3 +1,3 @@
 # Projet-specific settings.
 
-STEM=still-magic
+STEM=template
