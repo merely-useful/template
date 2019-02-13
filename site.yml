@@ -1,0 +1,25 @@
+# Display.
+title: "A Merely Useful Template"
+subtitle: "Build a GitHub Pages Site and a Nicely-Formatted Book from the Same Source"
+editor: "Greg Wilson"
+copyrightyear: "2019"
+repo: "https://github.com/merely-useful/template"
+website: "https://merely-useful.github.io/template/"
+email: "gvwilson@third-bit.com"
+organization: https://github.com/merely-useful/
+disclaimer: true
+
+# Order for table of contents.
+toc:
+  lessons:
+  - intro
+  bib:
+  - bib
+  extras:
+  - license
+  - conduct
+  - citation
+  - contributing
+  - gloss
+  - objectives
+  - keypoints
