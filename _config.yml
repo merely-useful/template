@@ -23,9 +23,6 @@ toc:
   - gloss
   - objectives
   - keypoints
-
-#-------------------------------------------------------------------------------
-
 # Tell Jekyll that "en" is a collection (whose files are found in "_en").  This
 # is what allows us to loop over files in various inclusions.  We use "en" to
 # indicate English, and can use other two-letter codes for other languages.

@@ -73,11 +73,11 @@ ${ALL_TEX} : ${PAGES_HTML} bin/get_body.py bin/transform.py ${TOC_JSON}
 	> ${ALL_TEX}
 
 # Create all the HTML pages once the Markdown files are up to date.
-${PAGES_HTML} : ${PAGES_MD} ${BIB_MD} ${TOC_JSON}
+${PAGES_HTML} : ${PAGES_MD} ${BIB_MD} ${CONFIG_YML} ${TOC_JSON}
 	${JEKYLL} build
 
 # Create the Jekyll configuration file.
-${CONFIG_YML}: .config.yml site.yml
+${CONFIG_YML}: site.yml .config.yml
 	cat $^ > $@
 
 # Create the bibliography Markdown file from the BibTeX file.
@@ -151,7 +151,7 @@ undone :
 
 ## clean          : clean up junk files.
 clean :
-	@rm -r -f _site dist
+	@rm -r -f _config.yml _site dist
 	@find . -name '*~' -delete
 	@find . -name __pycache__ -prune -exec rm -r "{}" \;
 	@find . -name '_minted-*' -prune -exec rm -r "{}" \;
