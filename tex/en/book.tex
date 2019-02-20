@@ -1,4 +1,5 @@
-\documentclass[10pt,letterpaper]{memoir}
+\documentclass[10pt,statementpaper]{memoir}
+\setstocksize{9in}{6in}
 \input{../settings}
 \begin{document}
 \pagestyle{empty}
@@ -10,7 +11,8 @@
   {\Huge\itshape A Merely Useful Template}\\[\baselineskip]
 
   {\large\itshape
-    Build a GitHub Pages Site and a Nicely-Formatted Book from the Same Source
+    Build GitHub Pages and a Nicely-Formatted Book\\
+    From a Single Source
   }\\[0.2\textheight]
 
   {\large edited by Greg Wilson}\par
@@ -59,4 +61,15 @@
 \pagenumbering{arabic}
 
 \input{all}
+
+\cleartoverso
+{\begingroup
+  \raggedleft
+  \vspace*{4\baselineskip}
+  This book was created using Node, draw.io, GNU Make, Jekyll, Pandoc, LaTeX, BibTeX, the memoir class,
+  and an unruly brew of regular expressions. \\
+  We are grateful to everyone who made their hard work freely available, \\
+  and earnestly hope that you will choose to follow their example.
+
+\endgroup}
 \end{document}
