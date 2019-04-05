@@ -8,6 +8,9 @@ and the glossary for a definition of [terms](#g:term).
 ## First Section {#s:intro-first}
 
 This is the body of the first section.
+It refers to [f:intro-fig](#FIG).
+
+{% include figure.html id="f:intro-fig" src="fig.svg" caption="Some Figure or Other" %}
 
 <section markdown="1">
 
