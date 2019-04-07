@@ -35,9 +35,9 @@ And then include a figure:
 
 
 ```r
-knitr::include_graphics("figures/elder-sign.png")
+knitr::include_graphics("figures/basics/elder-sign.png")
 ```
 
-![plot of chunk unnamed-chunk-4](../figures/elder-sign.png)
+![plot of chunk unnamed-chunk-4](../figures/basics/elder-sign.png)
 
 {% include links.md %}

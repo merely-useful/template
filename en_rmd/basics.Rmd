@@ -34,7 +34,7 @@ data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 And then include a figure:
 
 ```{r}
-knitr::include_graphics("figures/elder-sign.png")
+knitr::include_graphics("figures/basics/elder-sign.png")
 ```
 
 {% include links.md %}
