@@ -7,12 +7,13 @@ repo: "https://github.com/merely-useful/template"
 website: "https://merely-useful.github.io/template/"
 email: "gvwilson@third-bit.com"
 organization: https://github.com/merely-useful/
-disclaimer: true
+disclaimer: false
 
 # Order for table of contents.
 toc:
   lessons:
   - intro
+  - basics
   bib:
   - bib
   extras:
@@ -29,7 +30,7 @@ toc:
 collections:
   en:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:title.html
 
 # Specify the use of the "lesson" template for elements of the "en" collection.
 defaults:
@@ -67,5 +68,7 @@ exclude:
 - misc
 - node_modules
 - requirements.txt
+- site.mk
+- site.yml
 - src
 - tex

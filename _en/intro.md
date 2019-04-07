@@ -1,5 +1,11 @@
 ---
 title: "Introduction"
+questions:
+  - "Is this a question?"
+objectives:
+  - "This is what we are trying to do."
+keypoints:
+  - "Remember this."
 ---
 
 See [Wils2018](#BIB) for a description of the lesson design process,
