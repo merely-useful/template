@@ -29,7 +29,7 @@ data <- tribble(~a, ~b, 1, 10, 2, 22, 3, 35)
 data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 ```
 
-![plot of chunk unnamed-chunk-3](../figures/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](../figures/basics/unnamed-chunk-3-1.png)
 
 And then include a figure:
 
