@@ -1,11 +1,5 @@
 ---
 title: "Design"
-questions:
-  - FIXME
-objectives:
-  - FIXME
-keypoints:
-  - FIXME
 ---
 
 -   The goal was to use pure Jekyll to create HTML for GitHub Pages without having to commit any generated files.

@@ -85,6 +85,10 @@ and `some/path/filename.ext` to refer to files in sub-directories.
         (or whatever the default human language is).
     -   Alternatively, you can build a pretty home page for your work with explicit links to languages' home pages.
 
+-   External links are `[text][link-name]`, where `link-name` is a key in `_includes/links.md`.
+    -   Each file must end with `{% raw %}{% include links.md %}{% endraw %}` to include the shared list of links.
+    -   This unfortunately cannot be included in the template since links are expanded before files are fully expanded.
+
 -   Internal IDs for chapters, sections, figures, and tables all rely on the slug.
     -   The chapter ID `s:slug` is inserted automatically by the template.
     -   All section IDs must be `s:slug-something-unique` (and must be written manually).
@@ -94,11 +98,22 @@ and `some/path/filename.ext` to refer to files in sub-directories.
     -   The table IDs must be `t:slug-something-unique` and must be written manually.
 
 -   Use `{% raw %}{% include figure.html id="f:intro-fig" src="fig.svg" caption="Some Figure or Other" %}{% endraw %}` to create a figure.
-    -   The template automatically creates a `figure` element and looks for the image file under `./figures/slug/fig.svg`.
+    -   The template automatically creates a `figure` element and looks for the image file under `figures/slug/fig.svg`.
 
--   The source for all diagrams for the file is in `./figures/slug/slug.xml` (a [draw.io][draw-io] drawing).
-    -   The PNG, SVG, and PDF versions of the diagrams are in `./figures/slug/something.ext`.
-    -   Screenshots and other image files also live in `./figures/slug/something.ext`.
+-   If you would like to add or fix a diagram, please:
+    -   Edit the XML file in `./figures/slug` corresponding to the chapter using [draw.io][draw-io].
+    -   Select the drawing and export as SVG with a 4-pixel boundary and transparency turned on,
+        but *without* including the diagram source in the exported SVG.
+    -   Export a second time as PDF (selection only, cropped).
+        We have tried automating the SVG-to-PDF conversion with various tools,
+        but the results have been unsatisfying.
+    -   Edit the Markdown file and include an HTML `figure` element with an ID
+        containing (in order) an `img` element with a `src` attribute but nothing else
+        and a `figcaption` element with the figure's label.
+        These elements all have to be on one line
+        so that `bin/transform.py` can find and translate the elements correctly.
+    -   The PNG, SVG, and PDF versions of the diagrams are in `figures/slug/something.ext`.
+    -   Screenshots and other image files also live in `figures/slug/something.ext`.
     -   Use `a-b.ext` for multi-part filenames (i.e., dashes rather than underscores).
     -   This is inconsistent with the naming of source files described below,
         but LaTeX gets confused when trying to include image files with underscores in their names.
@@ -120,9 +135,8 @@ and `some/path/filename.ext` to refer to files in sub-directories.
     -   The first element in an exercise should be a level-3 heading.
     -   Inside the `section`, `<aside markdown="1">` and `</aside>` demarcate the solution.
 
--   To add code fragments,
-    put the source in `src/slug/long_name.ext`.
-    Include it in a left-justified, triple-backquoted code block.
+-   To add code fragments, put the source in `src/slug/long_name.ext`
+    and include it in a left-justified, triple-backquoted code block.
     Fenced code blocks *must* have a language type.
     -   `html` for HTML
     -   `js` for JavaScript and JSON
@@ -132,6 +146,10 @@ and `some/path/filename.ext` to refer to files in sub-directories.
     -   `shell` for shell commands
     -   `yaml` for YAML
     -   `text` for output (including error output), CSV files, and everything else.
+
+-   If you want to leave out sections of code,
+    use `# ...explanation...` (i.e., a comment with triple dots enclosing the text)
+    in the Markdown file.
 
 -   Every code block should be followed by a line that sets its title to the name of the file.
     -   Such as `{% raw %}{: title="callbacks/one-more.js"}{% endraw %}`.
@@ -144,10 +162,17 @@ and `some/path/filename.ext` to refer to files in sub-directories.
 -   Use underscores rather than dashes in filenames, e.g., `a_b.md`.
     -   Need underscores for Python source files that are being imported.
 
+-   When all else fails, put `<div markdown="1" replacement="something.tex">` in the Markdown file
+    and a corresponding `</div>` after the block of Markdown that's to be replaced by
+    the LaTeX inclusion.
+    This can be used for complex tables,
+    for displaying MathJax,
+    and so on.
+
 ## How do I preview the site locally? {#s:intro-preview}
 
 1.  Install Jekyll.
-2.  Install Python's `bibtexparser` with `pip -r ./requirements.txt`.
+2.  Install Python's `bibtexparser` with `pip -r requirements.txt`.
 3.  Create a Git repository.
 4.  Add <{{site.repo}}> as a remote called `template`.
     (Do *not* just clone this repository, since that will make collaboration more complicated.)
