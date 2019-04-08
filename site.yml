@@ -13,7 +13,9 @@ disclaimer: false
 toc:
   lessons:
   - intro
-  - basics
+  - design
+  - example
+  - rmarkdown
   bib:
   - bib
   extras:

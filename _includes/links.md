@@ -12,6 +12,15 @@ definitions if that's done.
 
 [covenant]: https://www.contributor-covenant.org
 
+[gfm]: https://github.github.com/gfm/
+[github-pages]: https://pages.github.com/
+
 [jekyll]: https://jekyllrb.com/
+
+[latex]: https://www.latex-project.org/
+
+[pandoc]: https://pandoc.org/
+
+[r-markdown]: https://rmarkdown.rstudio.com/
 
 [wilson-greg]: http://third-bit.com
