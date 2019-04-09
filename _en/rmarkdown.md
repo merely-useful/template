@@ -91,7 +91,7 @@ data <- tribble(~a, ~b, 1, 10, 2, 22, 3, 35)
 data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 ```
 
-![plot of chunk unnamed-chunk-4](../figures/rmarkdown/unnamed-chunk-4-1.png)
+![Simple Plot](../figures/rmarkdown/unnamed-chunk-4-1.png)
 
 And then include a figure:
 
@@ -100,6 +100,6 @@ And then include a figure:
 knitr::include_graphics("figures/rmarkdown/elder-sign.png")
 ```
 
-![plot of chunk unnamed-chunk-5](../figures/rmarkdown/elder-sign.png)
+![Elder Sign](../figures/rmarkdown/elder-sign.png)
 
 {% include links.md %}
