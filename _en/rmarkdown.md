@@ -63,14 +63,14 @@ print("Hello, world!")
 
 Create a plot:
 
-```{r}
+```{r fig.cap="Simple Plot"}
 data <- tribble(~a, ~b, 1, 10, 2, 22, 3, 35)
 data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 ```
 
 And then include a figure:
 
-```{r}
+```{r fig.cap="Elder Sign"}
 knitr::include_graphics("figures/rmarkdown/elder-sign.png")
 ```
 ````
