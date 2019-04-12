@@ -34,15 +34,16 @@ keypoints:
 
 -   Put the following in the first chunk of R code with `include=FALSE`,
     using your file's slug in place of the slug `rmarkdown`.
-    -   Yes, the slug should be inserted automatically…
+    -   Yes, the slug should be inserted automatically, but there's no easy way to do that.
 
-
-```r
+````
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 knitr::opts_knit$set(base.url = "../")
 knitr::opts_chunk$set(fig.path = "figures/rmarkdown/")
 library(tidyverse)
 ```
+````
 
 -   You can knit the document within RStudio as usual to preview it.
 -   But to build it for the website, you must run `make lang=en rmarkdown`.
@@ -63,14 +64,14 @@ print("Hello, world!")
 
 Create a plot:
 
-```{r fig.cap="Simple Plot"}
+```{r simple-plot, fig.cap="Simple Plot"}
 data <- tribble(~a, ~b, 1, 10, 2, 22, 3, 35)
 data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 ```
 
 And then include a figure:
 
-```{r fig.cap="Elder Sign"}
+```{r elder-sign, fig.cap="Elder Sign"}
 knitr::include_graphics("figures/rmarkdown/elder-sign.png")
 ```
 ````
@@ -91,7 +92,7 @@ data <- tribble(~a, ~b, 1, 10, 2, 22, 3, 35)
 data %>% ggplot() + geom_point(mapping = aes(x = a, y = b))
 ```
 
-![Simple Plot](../figures/rmarkdown/unnamed-chunk-4-1.png)
+![Simple Plot](../figures/rmarkdown/simple-plot-1.png)
 
 And then include a figure:
 
